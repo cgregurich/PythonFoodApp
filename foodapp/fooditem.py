@@ -10,7 +10,7 @@ class FoodItem:
     def proportionalize(self, ratio):
         for key, value in self.info.items():
             if key != 'name' and key != 'unit':
-                self.info[key] = round(int(self.info[key]) * ratio, 1)
+                self.info[key] = round(float(self.info[key]) * ratio, 1)
 
 
     def set_info_from_list(self, info_list):
@@ -75,7 +75,10 @@ class FoodItem:
         self.info['sugar'] = cal
 
     def __str__(self):
-        return self.str_formatted()
+        string = ''
+        for key, value in self.info.items():
+            string += f"  {key}:{value}"
+        return string
 
     # FIX THIS FUNCITON IT NO WORKU
     def get_tuple(self):

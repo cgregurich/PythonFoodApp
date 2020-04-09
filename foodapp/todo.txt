@@ -1,0 +1,9 @@
+Meal:
+    ability to view meal, modify meal, etc
+
+MealPlan:
+    implement the class and all that
+
+make these things usable throught the TUI
+
+FIX DATABASE AND GIT. maybe make it so the database is in a different folder that isn't being comitted and pushed to github?
