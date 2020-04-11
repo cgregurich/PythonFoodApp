@@ -11,7 +11,7 @@ class FoodItem:
         ratio = amount / int(self.info['ss'])
         for key, value in self.info.items():
             if key != 'name' and key != 'unit':
-                self.info[key] = round(float(self.info[key]) * ratio, 1)
+                self.info[key] = str(round(float(self.info[key]) * ratio, 1))
 
 
     def set_info_from_list(self, info_list):
@@ -88,14 +88,40 @@ class FoodItem:
     def get_dict(self):
         return self.info
 
+    @property
     def name(self):
         return self.info['name']
 
+    @property
     def ss(self):
         return self.info['ss']
 
+    @property
     def unit(self):
         return self.info['unit']
 
+    @property
     def cal(self):
         return self.info['cal']
+
+    @property
+    def carb(self):
+        return self.info['carb']
+
+    @property
+    def fat(self):
+        return self.info['fat']
+
+    @property
+    def protein(self):
+        return self.info['protein']
+
+    @property
+    def fiber(self):
+        return self.info['fiber']
+
+    @property
+    def sugar(self):
+        return self.info['sugar']
+
+
