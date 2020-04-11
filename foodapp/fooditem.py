@@ -13,7 +13,6 @@ class FoodItem:
             if key != 'name' and key != 'unit':
                 self.info[key] = str(round(float(self.info[key]) * ratio, 1))
 
-
     def set_info_from_list(self, info_list):
         i = 0
         for key in self.info.keys():
@@ -36,8 +35,6 @@ class FoodItem:
             spaces = ' ' * space_count
             return_str += f"{value}{spaces}"
         return return_str
-
-
 
     def set_name(self, name):
         self.name = name

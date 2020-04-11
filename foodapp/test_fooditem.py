@@ -44,6 +44,34 @@ class TestFoodItem(unittest.TestCase):
         self.assertEqual('18.8', self.food_2.fiber)
         self.assertEqual('3.1', self.food_2.sugar)
 
+    def test_set_info_from_list(self):
+        new_info_list_1 = ['apple2', '60', 'grams', '110', '25', '2', '3', '4', '15']
+        self.food_1.set_info_from_list(new_info_list_1)
+
+        self.assertEqual('apple2', self.food_1.name)
+        self.assertEqual('60', self.food_1.ss)
+        self.assertEqual('grams', self.food_1.unit)
+        self.assertEqual('110', self.food_1.cal)
+        self.assertEqual('25', self.food_1.carb)
+        self.assertEqual('2', self.food_1.fat)
+        self.assertEqual('3', self.food_1.protein)
+        self.assertEqual('4', self.food_1.fiber)
+        self.assertEqual('15', self.food_1.sugar)
+
+        new_info_list_2 = ['oats2', '100', 'grams', '200', '40', '15', '6', '2', '9']
+        self.food_2.set_info_from_list(new_info_list_2)
+        self.assertEqual('oats2', self.food_2.name)
+        self.assertEqual('100', self.food_2.ss)
+        self.assertEqual('grams', self.food_2.unit)
+        self.assertEqual('200', self.food_2.cal)
+        self.assertEqual('40', self.food_2.carb)
+        self.assertEqual('15', self.food_2.fat)
+        self.assertEqual('6', self.food_2.protein)
+        self.assertEqual('2', self.food_2.fiber)
+        self.assertEqual('9', self.food_2.sugar)
+
+
+
 
 
 
