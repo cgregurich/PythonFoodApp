@@ -1,17 +1,17 @@
 class FoodItem:
     def __init__(self, name='', ss='', unit='', cal='', carb='', fat='', protein='', fiber='', sugar=''):
-           self.info = {'name': name, 'ss': ss, 'unit': unit, 'cal': cal, 'carb': carb, 'fat': fat, 'protein': protein,
-                 'fiber': fiber, 'sugar': sugar}
+        self.info = {'name': name, 'ss': ss, 'unit': unit, 'cal': cal, 'carb': carb, 'fat': fat, 'protein': protein,
+                     'fiber': fiber, 'sugar': sugar}
 
     # TODO FIX THIS METHOD
     def set_info_from_dict(self, info_dict):
         self.info = info_dict
 
     def proportionalize(self, amount):
-        ratio = amount / int(self.info['ss'])
+        ratio = float(amount) / int(self.info['ss'])
         for key, value in self.info.items():
             if key != 'name' and key != 'unit':
-                self.info[key] = str(round(float(self.info[key]) * ratio, 1))
+                self.info[key] = round(float(self.info[key]) * ratio, 1)
 
     def set_info_from_list(self, info_list):
         i = 0

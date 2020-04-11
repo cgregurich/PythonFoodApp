@@ -65,8 +65,8 @@ def get_header_len():
     div = 0
     all_foods = food_dao.get_all_foods()
     for food in all_foods:
-        if len(food.name()) > div:
-            div = len(food.name())
+        if len(food.name) > div:
+            div = len(food.name)
     div += 2
     if div < 9:
         div = 9
@@ -101,15 +101,36 @@ def print_heading(div):
     print(line1)
     print(line2)
 
+
 def calc_macros():
-    altered_food = macros.calc_macros()
-    if altered_food is None or altered_food == 'x':
-        return None
-    div = len(altered_food.name()) + 2
+    user_input = calc_macros_input()
+    name = user_input[0]
+    amount = user_input[1]
+
+    food = food_dao.get_foods_by_name(name)
+    food.proportionalize(amount)
+
+    div = len(name) + 2
     if div < 9:
         div = 9
     print_heading(div)
-    print(altered_food.str_formatted(div))
+    print(food.str_formatted(div))
+
+
+def calc_macros_input():
+    name = input("Enter name of food: ")
+    if name == 'x':
+        return None
+    food_by_name = food_dao.get_foods_by_name(name)
+    if food_by_name is None:
+        print("No foods found")
+        return None
+    else:
+        amount = input("Enter amount: ")
+        if amount == 'x':
+            return None
+        else:
+            return name, amount
 
 def add_new_food():
     print('\nADDING NEW FOOD')

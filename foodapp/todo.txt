@@ -4,6 +4,9 @@ I changed fooditem.proportionalize parameter from ratio to amount (why not calcu
 and i have no idea what I broke because of it. Learn to write tests, they will make life much easier!!
 
 
+*Change DAO module to FoodDao class, because I'll need to implement more data access objects
+such as meals and meal plans, groceries maybe, etc.
+
 Meal:
     ability to view meal, modify meal, etc
 

@@ -2,7 +2,11 @@ from fooditem import FoodItem
 from dao import DAO
 
 
+# TODO: extract methods so that this module doesn't have TUI and logic in one place
+# i.e. TUI should be in the TUI module
+
 def calc_macros():
+    food_dao = DAO()
     name = input("Enter name of food: ")
     if name == 'x':
         return None
@@ -24,6 +28,9 @@ def calc_macros():
 
 
 
+def calc_macros(food_item, amount):
+    proportioned_food = food_item.proportionalize(amount)
+    return proportioned_food
 
 
 
@@ -32,7 +39,12 @@ def calc_macros():
 
 
 
-food_dao = DAO()
-#calc_macros()
+
+
+
+
+
+
+
 
 
