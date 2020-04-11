@@ -7,7 +7,8 @@ class FoodItem:
     def set_info_from_dict(self, info_dict):
         self.info = info_dict
 
-    def proportionalize(self, ratio):
+    def proportionalize(self, amount):
+        ratio = amount / int(self.info['ss'])
         for key, value in self.info.items():
             if key != 'name' and key != 'unit':
                 self.info[key] = round(float(self.info[key]) * ratio, 1)

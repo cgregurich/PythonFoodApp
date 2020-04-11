@@ -9,8 +9,8 @@ tui.run()
 
 food_dao = DAO()
 
-#oats = FoodItem('oats', '40', 'g', '150', '25', '4', '4', '4', '2')
-#banana = FoodItem('banana', '1', 'banana', '75', '12', '0', '1', '1', '8')
+oats = FoodItem('oats', '40', 'g', '150', '25', '4', '4', '4', '2')
+banana = FoodItem('banana', '1', 'banana', '75', '12', '0', '1', '1', '8')
 #print(oats)
 #print(banana)
 
@@ -20,6 +20,11 @@ food_dao = DAO()
 #print(breakfast)
 #breakfast.calc_meal_macros()
 
+breakfast = Meal()
+breakfast.add_ingredient(oats, 125)
+#print(breakfast)
+#print(breakfast.get_ingredients())
+#oats.proportionalize(125)
 
 
 

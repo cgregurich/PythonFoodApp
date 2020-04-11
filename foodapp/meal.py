@@ -4,7 +4,10 @@ class Meal:
 
     def add_ingredient(self, food_item, amount):
         ingredient_dict = {'food_item': food_item, 'amount': amount}
-        self.ingredients_list.append(ingredient_dict)
+        meal_ing = food_item.proportionalize(amount)
+        print(food_item)# testing
+        print(f"meal_ing: {meal_ing}")#testing
+        self.ingredients_list.append(meal_ing)
 
     def get_ingredients(self):
         return self.ingredients_list
@@ -12,7 +15,8 @@ class Meal:
     def __str__(self):
         string = ''
         for ingredient in self.ingredients_list:
-            string += f"{ingredient['food_item'].name()} - {ingredient['amount']} {ingredient['food_item'].unit()}  "
+            #string += f"{ingredient['food_item'].name()} - {ingredient['amount']} {ingredient['food_item'].unit()}  "
+            string += ingredient.str_formatted()
         return string
 
     def calc_meal_macros(self):

@@ -1,3 +1,9 @@
+URGENT!!!
+learn to write tests.
+I changed fooditem.proportionalize parameter from ratio to amount (why not calculate the ratio within the func?)
+and i have no idea what I broke because of it. Learn to write tests, they will make life much easier!!
+
+
 Meal:
     ability to view meal, modify meal, etc
 
@@ -6,4 +12,25 @@ MealPlan:
 
 make these things usable throught the TUI
 
-FIX DATABASE AND GIT. maybe make it so the database is in a different folder that isn't being comitted and pushed to github?
+implement meal plan TUI
+create a "main" tui that you can choose to interact with food db (i.e. macros sheet) or meal db (need to make; i.e. sheet1)
+groceries come later, booter sket
+
+MEAL PLAN DISPLAY
+meal name and macros
+eg:
+
+NAME      CAL    CARB    FAT    PROTEIN
+Breakast  1000   100     20     30
+
+INDIVIDUAL MEAL DISPLAY
+meal name as header
+each ingredient with normal food_item display
+
+eg:
+
+BREAKFAST
+
+NAME  SS  UNIT   CAL    CARB   FAT   PROTEIN
+oats  125  g     375    20     4      4
+egg   6    egg   420    0      20     30
